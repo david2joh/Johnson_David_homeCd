@@ -18,7 +18,7 @@ This project is licensed under the MIT License.
 
 ## Links
 
-The GitHub repository for this application may be found at https://github.com/david2joh/Johnson_David_homeCd
+The GitHub repository for this application may be found at https://github.com/david2joh/Johnson_David_homeCd.git
 
 ## Technologies
 
