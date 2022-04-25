@@ -8,11 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="homeCD" />
+        <module name="Johnson_David_HomeCd" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Johnson_David_HomeCd" options="-parameters" />
       <module name="homeCD" options="-parameters" />
     </option>
   </component>

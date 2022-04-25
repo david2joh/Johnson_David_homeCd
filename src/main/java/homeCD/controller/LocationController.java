@@ -156,8 +156,8 @@ public class LocationController {
         if (result != null) {
             for (int i = 0; i < results.size(); i++) {
                 CdDetailBean cdDetail = new CdDetailBean();
-                cdDetail.setId(i + 1);
                 result = results.get(i);
+                cdDetail.setId((Integer) result.get("cdId"));
                 cdDetail.setLocationName((String) result.get("locationName"));
                 cdDetail.setComposer((String) result.get("composerName"));
                 cdDetail.setArtist((String) result.get("artist"));
@@ -167,9 +167,6 @@ public class LocationController {
             response.addObject("cdDetails", cdDetails);
         }
 
-      /*
-        Seeding the model with a form id in this case spring is thorwing errors
-         */
         LocationFormBean form = new LocationFormBean();
         form.setId(locationId);
         form.setLocationName(location.getLocationName());
