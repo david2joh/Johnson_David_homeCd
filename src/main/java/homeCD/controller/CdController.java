@@ -61,10 +61,7 @@ public class CdController {
         ModelAndView response = new ModelAndView();
         response.setViewName("cd/cdAdd");
 
-        /*
-        Seeding the model with an empty form if necessary
-         */
-        if (form == null || form.getId() == 0) {
+         if (form == null || form.getId() == 0) {
             form = new CdEntryFormBean();
         }
         response.addObject("form", form);
@@ -114,7 +111,6 @@ public class CdController {
             pform.setLabel(form.getLabel());
             pform.setCatalogNumber(form.getCatalogNumber());
             pform.setLocationName(form.getLocationName());
-//            pform.setCd(cd);
             response.addObject("errors", errors);
             response.addObject("form", pform);
         }
@@ -324,14 +320,6 @@ public class CdController {
         return response;
     }
 
-//    @RequestMapping(value = "/cd/cdDetails", method = RequestMethod.GET)
-//    public ModelAndView cdDetails(CdDetailsBean form)
-//            throws Exception {
-//        ModelAndView response = new ModelAndView();
-//        response.addObject("form", form);
-//        response.setViewName("cd/cdDetails");
-//        return response;
-//    }
 
 }  //class
 

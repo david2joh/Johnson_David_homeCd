@@ -45,13 +45,8 @@ public class LocationController {
         locations = locationDao.findAll();
 
         response.addObject("locations", locations);
-        /*
-        Seeding the model with an empty form so that the JSP substitutions will not error out
-        in this case spring is being nice enough to not throw errors but these 2 lines are safety
-         */
-        LocationFormBean form = new LocationFormBean();
+         LocationFormBean form = new LocationFormBean();
         response.addObject("form", form);
-//        response.addObject("bindingResult", bindingResult);
         return response;
     }
 
@@ -85,7 +80,6 @@ public class LocationController {
             rmap.addAttribute("bindingResult", bindingResult);
             rmap.addAttribute("form", form);
 //            response.setViewName("redirect:/location/list");
-
 //            return new ModelAndView("forward:/location/list",rmap);
             return new ModelAndView("redirect:/location/list", rmap);
         }
@@ -100,14 +94,6 @@ public class LocationController {
                 location.setLocationName(form.getLocationName());
                 locationDao.save(location);
                 log.debug("Location creation = " + form.toString());
-//            } else if (action.equalsIgnoreCase("update")) {
-//                //Already know that location name is valid so just update
-//                log.debug("Location name changed from : " + location.getLocationName() +
-//                        " to " + form.getLocationName());
-//                location.setLocationName(form.getLocationName());
-//                locationDao.save(location);
-//                response.setViewName("redirect:/location/list");
-//                return response;
             } else {  //wow someone spoofed us just go back reseting the form
                 log.debug("Location creation with bad inputs = " + form.toString());
                 response.setViewName("redirect:/location/list");

@@ -92,7 +92,6 @@ public class CdService {
         Integer composerPK;
         Composer composer = null;
         Performance performance = null;
-//        cd = cdDao.findCdByLabelAndAndCatalogNumber(form.getLabel(),form.getCatalogNumber());
 
         //check on the composer table for the ID
         composer = composerDao.findByComposerName(form.getComposer());
@@ -103,7 +102,6 @@ public class CdService {
 
             //Get the PKs of  Composer
             composerPK = composer.getId();
-//            List<Performance> performances = performanceDao.findBycdIdAndcomposerId(cdPK, composerPK);
             Set<Performance> performances = cd.getPerformances();
             if ((performances != null) && (performances.size() > 0)) { //iterate through the performances
                 for (Performance p : performances) {
@@ -125,8 +123,6 @@ public class CdService {
 
         //Add a performance into the DB
         performance = new Performance();
-        //        performance.setCdId(cdPK);
-        //        performance.setComposerId(composerPK);
         performance.setPerformance(form.getPerformance());
         performance.setArtist(form.getArtist());
         performance.setCd(cd);
@@ -153,7 +149,6 @@ public class CdService {
         form.getWorks().add(performance.getPerformance());
         form.getArtists().add(performance.getArtist());
         form.getPerformances().add(performance);
-        //        performanceDao.addPerformance(cdPK,composerPK,form.getWork(),form.getArtist());
         return performance;
     }
 

@@ -57,12 +57,6 @@ public class LoginController {
     public ModelAndView register() throws Exception {
         ModelAndView response = new ModelAndView();
         response.setViewName("user/register");
-
-
-        /*
-        Seeding the model with an empty form so that the JSP substitutions will not error out
-        in this case spring is being nice enough to not throw errors but these 2 lines are safety
-         */
         RegisterFormBean form = new RegisterFormBean();
         response.addObject("form", form);
 

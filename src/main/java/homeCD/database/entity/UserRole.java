@@ -24,8 +24,6 @@ public class UserRole {
     @Column(name = "user_id")
     private Integer userId;
 
-
-    //Not bothering with the fact that user could have many roles
     @Column(name = "user_role")
     private String userRole;
 

@@ -60,13 +60,6 @@ public class UserController {
 
         return response;
     }
-    //Instead of showing a view we want to redirect to the edit page
-    //the edit page will then be responsible for loading the user from the DB
-    //and dynamically creating the page
-    //when you use redirect:  as part of the view name it triggers spring to tell
-    //the browser to do a redirect to the URL after the :   The big piece here is to
-    //recognize that redirect: uses a
-    //  response.setViewName("redirect:/user/edit/" + user.getId());
 
     @GetMapping("user/edit/{userId}")
 //    @RequestMapping(value = "/user/edit/{userId}", method = RequestMethod.GET)
